@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const PREFIX = process.env.REACT_APP_LS_PREFIX;
 
+{/* Detects First Render */ }
 export const useIsFirstRender = () => {
     const isFirstRenderRef = useRef(true);
 
