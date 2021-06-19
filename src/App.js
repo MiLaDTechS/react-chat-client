@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Switch, useLocation } from 'react-router-dom';
+import AuthRoute from './components/AuthRoute';
+import PrivateRoute from './components/PrivateRoute';
+import ConfirmEmail from './pages/ConfirmEmail';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
-function App() {
+const App = () => {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Switch location={location} key={location.pathname}>
+        <PrivateRoute exact path="/" component={<Home />} />
+        <AuthRoute path="/login" component={<Login />} />
+        <AuthRoute path="/register" component={<Register />} />
+        <Route path="/confirmemail" component={ConfirmEmail} />
+      </Switch>
+    </AnimatePresence>
   );
 }
 
