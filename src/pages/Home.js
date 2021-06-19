@@ -292,7 +292,7 @@ const Home = () => {
                             <input type="text" name="message" onInvalid={({ target }) => {
                                 CustomValidationModule.onSubmit(target);
                             }} value={message} onChange={handleMessageChange} className="w-full bg-white rounded-full px-5 py-2 focus:outline-none" placeholder="Send a message..." required />
-                            <button type="submit" className="px-5 py-2 transition bg-gray-800 active:bg-gray-700 text-white rounded ml-3 focus:outline-none" disabled={!connectedRooms.includes(currentChat.chatName)}>
+                            <button type="submit" className="px-5 py-2 transition bg-gray-800 active:bg-gray-700 text-white rounded ml-3 focus:outline-none disabled:opacity-50" disabled={!connectedRooms.includes(currentChat.chatName)}>
                                 Send
                             </button>
                         </form>
