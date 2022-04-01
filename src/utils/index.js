@@ -34,12 +34,12 @@ export const useLocalStorage = (key, initialValue) => {
 };
 
 export const useImmer = (initialValue) => {
-    const [val, updateValue] = useState(initialValue);
+    const [value, setValue] = useState(initialValue);
     return [
-        val,
+        value,
         useCallback((updater) => {
-            if (typeof updater === "function") updateValue(produce(updater));
-            else updateValue(updater);
+            if (typeof updater === "function") setValue(produce(updater));
+            else setValue(updater);
         }, []),
     ];
 }
