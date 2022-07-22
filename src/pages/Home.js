@@ -288,7 +288,7 @@ const Home = () => {
                                 {messagesBody}
                             </div>
                         </div>
-                        <form onSubmit={sendMessage} className="flex items-center h-12 md:h-14 w-full absolute bottom-0 p-2 bg-gray-200 text-xs md:text-sm" autoComplete="off">
+                        <form onSubmit={sendMessage} className="flex items-center h-12 md:h-14 w-full sticky bottom-0 p-2 bg-gray-200 text-xs md:text-sm" autoComplete="off">
                             <input type="text" name="message" onInvalid={({ target }) => {
                                 CustomValidationModule.onSubmit(target);
                             }} value={message} onChange={handleMessageChange} className="w-full bg-white rounded-full px-5 py-2 focus:outline-none" placeholder="Send a message..." required />
