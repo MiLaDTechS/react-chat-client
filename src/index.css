@@ -5,6 +5,7 @@
 @layer base {
   body {
     font-family: cursive;
+    height: 100vh;
   }
 }
 
